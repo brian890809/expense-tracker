@@ -8,14 +8,15 @@ import Home from "./components/home.component";
 import CreateExpense from './components/create-expense.component';
 import EditExpense from "./components/edit-expense.component";
 import HistoryExpense from './components/history-expense.component';
+import Settings from './components/settings.component';
 class App extends Component {
   render () {
     return (
       <Router>
         <div className='container'>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a class='navbar-brand'>
-              <img scr={logo} width='30' height='30'/>
+            <a href='/' class='navbar-brand'>
+              <img scr={logo} width='30' height='30' alt='logo'/>
             </a>
             <Link to="/" className="navbar-brand">Expenses</Link>
             <div className="collapse navbar-collapse">
@@ -29,6 +30,10 @@ class App extends Component {
                 <li className='navbar-item'>
                   <Link to='/history' className='nav-link'>History</Link>
                 </li>
+                <li className='navbar-item'>
+                  <Link to='/settings' className='nav-link'>Settings</Link>  
+                  {/*change to "Configuration" */}
+                </li>
               </ul>
             </div>
           </nav>
@@ -36,6 +41,7 @@ class App extends Component {
           <Route path='/create' component={CreateExpense}/>
           <Route path='/edit/:id' component={EditExpense}/>
           <Route path='/history' component={HistoryExpense}/>
+          <Route path='/settings' component={Settings}/>
         </div>
       </Router>
       

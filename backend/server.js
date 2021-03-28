@@ -25,7 +25,6 @@ expenseRoutes.route('/history').get(function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            console.log('object');
             res.json(expense);
         }
     });
